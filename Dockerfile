@@ -17,8 +17,8 @@ RUN apt-get install -y oracle-java8-set-default
 RUN apt-get install -y maven
 RUN apt-get clean all
 
-RUN mkdir hello-docker
-ADD ./target/HelloDocker-0.0.1-SNAPSHOT.jar hello-docker
-WORKDIR hello-docker
+RUN mkdir eureka-service
+ADD ./target/eureka-service-0.0.1-SNAPSHOT.jar eureka-service
+WORKDIR eureka-service
 EXPOSE 8090
-ENTRYPOINT ["sh","-c","java -Djava.security.egd=file:/dev/./urandom -jar HelloDocker-0.0.1-SNAPSHOT.jar > output.out"]
+ENTRYPOINT ["sh","-c","java -Djava.security.egd=file:/dev/./urandom -jar eureka-service-0.0.1-SNAPSHOT.jar > output.out"]
